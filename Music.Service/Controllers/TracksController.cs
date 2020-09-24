@@ -25,8 +25,15 @@ namespace Music.Service.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TrackModel>>> GetTracks(int albumId)
         {
-            var tracks = await _repository.GetTracks(albumId);
-            return _mapper.Map<TrackModel[]>(tracks);
+            try
+            {
+                var tracks = await _repository.GetTracks(albumId);
+                return _mapper.Map<TrackModel[]>(tracks);
+            }
+            catch (Exception)
+            {
+                return StatusCode(StatusCodes.Status500InternalServerError, "Database Failure");
+            }
         }
 
         [HttpPut("{trackId:int}")]
