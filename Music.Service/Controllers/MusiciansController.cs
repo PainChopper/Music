@@ -28,7 +28,7 @@ namespace Music.Service.Controllers
         {
             try
             {
-                var musicians = await _musicRepository.GetMusicianWithAlbums(musician_name);
+                var musicians = await _musicRepository.GetMusiciansWithAlbums(musician_name);
                 return _mapper.Map<MusicianModel[]>(musicians);
             }
             catch (Exception)

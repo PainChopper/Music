@@ -18,7 +18,6 @@ namespace Music.Service
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
@@ -32,16 +31,12 @@ namespace Music.Service
             services.AddControllers();
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
-
-            // var context = app.ApplicationServices.GetService<MusicContext>();
-            // DataGenerator.LoadSampleData(context, @"data sample.json");
 
             app.UseHttpsRedirection();
 

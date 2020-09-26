@@ -42,7 +42,7 @@ namespace Music.Service.Controllers
             try
             {
                 if (trackId != trackModel.Id)
-                    return BadRequest();
+                    return BadRequest("Cannot match the track ID");
                 var track = await _repository.GetTrackByAlbum(albumId, trackId);
                 if (track == null)
                     return NotFound("Couldn't find the track");

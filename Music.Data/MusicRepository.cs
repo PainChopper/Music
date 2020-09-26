@@ -15,7 +15,7 @@ namespace Music.Data
             => _context.ChangeTracker.HasChanges();
         public async Task<bool> SaveChangesAsync() 
             =>  await _context.SaveChangesAsync() > 0;
-        public async Task<IEnumerable<Musician>> GetMusicianWithAlbums(string musicianName)
+        public async Task<IEnumerable<Musician>> GetMusiciansWithAlbums(string musicianName)
         {
             IQueryable<Musician> query = _context.Musicians;
             if (!string.IsNullOrEmpty(musicianName))
