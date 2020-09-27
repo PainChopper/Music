@@ -28,6 +28,8 @@ namespace Music.Service
             
             services.AddAutoMapper();
 
+            services.AddCors();
+
             services.AddControllers();
         }
 
@@ -41,6 +43,8 @@ namespace Music.Service
             app.UseHttpsRedirection();
 
             app.UseRouting();
+
+            app.UseCors(builder => builder.AllowAnyOrigin());
 
             app.UseAuthorization();
 
