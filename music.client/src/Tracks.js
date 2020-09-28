@@ -1,8 +1,6 @@
 import React , { useState, useEffect } from "react";
 import axios from "axios";
 
-import ReactDataGrid from 'react-data-grid';
-
 function GetData(props){
     const [tracks, setData] = useState([]);
     useEffect(() => {
@@ -25,32 +23,6 @@ function GetData(props){
       </ul>
     );    
 }
-
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-// class TrackList extends React.Component {
-//     state = {
-//       tracks: []
-//     }
-  
-//     componentDidMount() {
-//       axios.get(`http://localhost:62708/api/albums/3/tracks`)
-//         .then(res => {
-//           const tracks = res.data;
-//           this.setState({ tracks });
-//         })
-//     }
-  
-//     render() {
-//       return (
-//         <ul>
-//           {this.state.tracks.map(track => <li key={track.id}>{track.name}</li>)}
-//         </ul>
-//       )
-//     }
-//   }
 
 function Tracks  () {
     return (
